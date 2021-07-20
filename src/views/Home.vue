@@ -1,13 +1,26 @@
 <template>
-  <Logo/>
+  <div>
+    <Header/>
+    <!--  FIXME: These are temp items  -->
+    <MainPageItem/>
+    <MainPageItem/>
+    <MainPageItem/>
+    <MainPageItem/>
+    <MainPageItem/>
+    <Footer/>
+  </div>
 </template>
 
 <script>
-  import Logo from '../components/Logo'
+  import Header from '../components/Header'
+  import Footer from '../components/Footer'
+  import MainPageItem from "../components/MainPageItem";
 
   export default {
     components: {
-      Logo
+      Header,
+      Footer,
+      MainPageItem
     }
   }
 </script>
