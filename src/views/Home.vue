@@ -2,12 +2,13 @@
   <Logo/>
 </template>
 
-<script>
+<script lang="js">
   import Logo from '../components/Logo'
+  import { defineComponent } from '@vue/composition-api'
 
-  export default {
+  export default defineComponent({
     components: {
       Logo
     }
-  }
+  })
 </script>

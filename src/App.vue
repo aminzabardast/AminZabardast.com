@@ -7,21 +7,16 @@
   </v-app>
 </template>
 
-<script>
-
+<script lang="js">
 import TopLine from "./components/TopLine";
+import { defineComponent } from '@vue/composition-api'
 
-export default {
+export default defineComponent({
   name: 'App',
   components: {
     TopLine
-  },
-  data () {
-    return {
-      //
-    }
   }
-}
+})
 </script>
 
 <style>
