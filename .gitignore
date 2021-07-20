@@ -160,5 +160,4 @@ yarn-error.log
 # End of https://www.toptal.com/developers/gitignore/api/vue,linux,vuejs,macos,jetbrains+all
 
 #### NO Package Lock
-package-lock.json
-
+*-lock.json
