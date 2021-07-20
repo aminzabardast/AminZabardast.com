@@ -161,3 +161,4 @@ yarn-error.log
 
 #### NO Package Lock
 *-lock.json
+*.lock
