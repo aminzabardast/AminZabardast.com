@@ -1,15 +1,16 @@
 <template>
   <v-container class="py-0">
     <div v-if="loading">Loading ...</div>
-    <div style="width: 100%" v-else v-html="html"></div>
+    <VueShowdown
+      :markdown="rawPost"
+      :extensions="extensions"
+    />
   </v-container>
 </template>
 
 <script lang="js">
-import { defineComponent, ref, computed, onMounted } from '@vue/composition-api'
-import showdown from 'showdown'
+import { defineComponent, ref, onMounted } from '@vue/composition-api'
 import showdownHighlight from 'showdown-highlight'
-import 'showdown-prettify'
 import axios from 'axios'
 import 'highlight.js/styles/github.css'
 
@@ -26,29 +27,20 @@ export default defineComponent({
         rawPost.value = data.request.response
       })
     })
-
+    const extensions = [
+      showdownHighlight({pre: true})
+    ]
     const rawPost = ref('')
-
-    showdown.setFlavor('github')
-    const converter = new showdown.Converter({
-      extensions: [
-          showdownHighlight({pre: true}), 'prettify'
-      ]
-    })
-    const html = computed(() => {
-      return converter.makeHtml(rawPost.value)
-    })
     const loading = ref(true)
     return {
       loading,
-      html
+      rawPost,
+      extensions
     }
   }
 })
 </script>
 
 <style>
-code.hljs {
-  width: 100% !important;
-}
+
 </style>
