@@ -1,6 +1,6 @@
 <template>
   <v-container class="py-0">
-    ABOUT
+    <router-link to="/blog/2020/1/1/IDID">Blog</router-link>
   </v-container>
 </template>
 
@@ -8,7 +8,7 @@
 import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
-  name: 'About'
+  name: 'BlogPostList'
 })
 </script>
 

@@ -1,14 +1,12 @@
 <template>
-  <v-container class="py-0">
-    ABOUT
-  </v-container>
+  <router-view></router-view>
 </template>
 
 <script lang="js">
 import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
-  name: 'About'
+  name: 'Blog'
 })
 </script>
 

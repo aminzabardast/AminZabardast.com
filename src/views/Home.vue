@@ -1,14 +1,17 @@
 <template>
-  <Logo/>
+  <v-container class="py-0">
+    Home
+  </v-container>
 </template>
 
 <script lang="js">
-  import Logo from '../components/Logo'
-  import { defineComponent } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 
-  export default defineComponent({
-    components: {
-      Logo
-    }
-  })
+export default defineComponent({
+  name: 'Home'
+})
 </script>
+
+<style scoped>
+
+</style>
