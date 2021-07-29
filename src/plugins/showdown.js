@@ -11,6 +11,8 @@ Vue.use(VueShowdown, {
         ghCodeBlocks: true,
         tasklists: true,
         smartIndentationFix: true,
-        simpleLineBreaks: false
+        simpleLineBreaks: false,
+        parseImgDimensions: true,
+        underline: true
     }
 })
