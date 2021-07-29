@@ -1,5 +1,4 @@
 import Vue from 'vue'
-import './plugins/vuetify'
 import './plugins/showdown'
 import App from './App.vue'
 import router from './router'
@@ -9,6 +8,7 @@ import { faGithub, faTwitter, faLinkedin, faInstagram } from '@fortawesome/free-
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueCompositionAPI from '@vue/composition-api'
+import vuetify from './plugins/vuetify'
 
 library.add(faGithub, faTwitter, faEnvelope, faLinkedin, faInstagram)
 Vue.component('font-awesome-icon', FontAwesomeIcon)
@@ -18,5 +18,6 @@ Vue.use(VueCompositionAPI)
 new Vue({
   router,
   store,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')
