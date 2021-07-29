@@ -6,6 +6,7 @@
       <v-content class="body">
         <router-view></router-view>
       </v-content>
+      <Footer></Footer>
     </v-container>
   </v-app>
 </template>
@@ -14,12 +15,14 @@
 import TopLine from "./components/TopLine";
 import { defineComponent } from '@vue/composition-api'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 export default defineComponent({
   name: 'App',
   components: {
     TopLine,
-    Header
+    Header,
+    Footer
   }
 })
 </script>
