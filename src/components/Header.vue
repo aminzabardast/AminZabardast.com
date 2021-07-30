@@ -1,20 +1,35 @@
 <template>
 <!--  TODO: Add avatar -->
-  <v-container class="py-4">
-    <div>
-      <h1 class="text--accent-4 pb-3"><router-link class="name" to="/">Amin Zabardast</router-link></h1>
-    </div>
-    <div>
-      <span class="pr-2"><router-link to="/blog">Blog</router-link></span>
-      <span class="pr-2">/</span>
-      <span class="pr-2"><router-link to="/about">About</router-link></span>
-      <span class="pr-2">/</span>
-      <span class="pr-2"><a href="http://twitter.com/AminZabardast" target="_blank">Twitter</a></span>
-      <span class="pr-2">/</span>
-      <span class="pr-2"><a href="http://github.com/AminZabardast" target="_blank">Github</a></span>
-    </div>
-    <v-divider class="mt-4"></v-divider>
-  </v-container>
+  <v-row class="mt-1">
+    <v-col
+        align="center"
+        align-self="center"
+        class="pl-5"
+    >
+      <div>
+        <router-link class="name" to="/">
+          <v-avatar
+              color="primary"
+              size="196"
+          >
+            <img
+                src="../assets/amin2.jpg"
+                alt="AZ"
+            >
+          </v-avatar>
+          <h1 class="font-weight-bold">Amin Zabardast</h1>
+        </router-link>
+        <span class="pr-2"><router-link to="/blog">Blog</router-link></span>
+        <span class="pr-2">/</span>
+        <span class="pr-2"><router-link to="/about">About</router-link></span>
+        <span class="pr-2">/</span>
+        <span class="pr-2"><a href="http://twitter.com/AminZabardast" target="_blank">Twitter</a></span>
+        <span class="pr-2">/</span>
+        <span class="pr-2"><a href="http://github.com/AminZabardast" target="_blank">Github</a></span>
+      </div>
+
+    </v-col>
+  </v-row>
 </template>
 
 <script lang="js">

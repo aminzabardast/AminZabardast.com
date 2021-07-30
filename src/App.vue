@@ -1,18 +1,14 @@
 <template>
-  <v-app class="app-main">
+  <v-app class="app">
     <TopLine/>
-    <v-container class="app-column" style="height: 100%">
+    <v-container class="app-column">
+      <Header></Header>
       <v-row>
-        <Header></Header>
-      </v-row>
-      <v-row>
-        <v-main class="body">
+        <v-main class="main">
           <router-view></router-view>
         </v-main>
       </v-row>
-      <v-row>
-        <Footer></Footer>
-      </v-row>
+      <Footer></Footer>
     </v-container>
   </v-app>
 </template>
@@ -38,8 +34,13 @@ export default defineComponent({
     width: 650px;
     background: white;
     padding-top: 10px !important;
+    height: 100%;
+    position:relative;
   }
-  .app-main {
+  .app {
     background-color: #def0ec !important;
+  }
+  .main {
+    padding-bottom: 100px !important;
   }
 </style>
