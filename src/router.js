@@ -1,10 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from './views/Home.vue'
-import About from './views/About'
-import Blog from './views/Blog/Blog'
-import BlogPostList from './views/Blog/BlogPostList'
-import BlogPost from './views/Blog/BlogPost'
 
 Vue.use(VueRouter)
 
@@ -19,22 +15,22 @@ export default new VueRouter({
     {
       path: '/about',
       name: 'about',
-      component: About
+      component: () => import('./views/About')
     },
     {
       path: '/blog',
       name: 'blog',
-      component: Blog,
+      component: () => import('./views/Blog/Blog'),
       children: [
         {
           path: '',
           name: 'blog_post_list',
-          component: BlogPostList
+          component: () => import('./views/Blog/BlogPostList')
         },
         {
           path: ':year/:month/:day/:id',
           name: 'blog_post',
-          component: BlogPost
+          component: () => import('./views/Blog/BlogPost')
         }
       ]
     }
