@@ -1,6 +1,8 @@
 <template>
-  <v-container class="py-0">
-    Home
+  <v-container>
+    <div class="text-center">
+      <p>HOME</p>
+    </div>
   </v-container>
 </template>
 

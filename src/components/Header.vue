@@ -17,15 +17,31 @@
                 alt="AZ"
             >
           </v-avatar>
-          <h1 class="font-weight-bold">Amin Zabardast</h1>
+          <h1 class="font-weight-black">Amin Zabardast</h1>
         </router-link>
-        <span class="pr-2"><router-link to="/blog">Blog</router-link></span>
+        <span class="pr-2"><router-link to="/blog">
+          Blog
+        </router-link></span>
         <span class="pr-2">/</span>
         <span class="pr-2"><router-link to="/about">About</router-link></span>
         <span class="pr-2">/</span>
-        <span class="pr-2"><a href="http://twitter.com/AminZabardast" target="_blank">Twitter</a></span>
+        <span class="pr-2"><a href="http://twitter.com/AminZabardast" target="_blank">
+          <v-icon
+            color="cyan"
+          >
+            mdi-twitter
+          </v-icon>
+          Twitter
+        </a></span>
         <span class="pr-2">/</span>
-        <span class="pr-2"><a href="http://github.com/AminZabardast" target="_blank">Github</a></span>
+        <span class="pr-2"><a href="http://github.com/AminZabardast" target="_blank">
+          <v-icon
+            color="black"
+          >
+            mdi-github
+          </v-icon>
+          Github
+        </a></span>
       </div>
 
     </v-col>
@@ -44,7 +60,6 @@ export default defineComponent({
 <style scoped>
 a {
   text-decoration: none;
-  font-weight: bolder;
   color: black !important;
 }
 a:hover {
