@@ -1,5 +1,5 @@
 <template>
-  <v-container class="py-0">
+  <v-container>
     <div v-if="loading">Loading ...</div>
     <VueShowdown
       :markdown="rawPost"
@@ -21,10 +21,15 @@ export default defineComponent({
     const params = route.params
     const baseUrl = process.env.BASE_URL
     onMounted(() => {
-      const location = `${baseUrl}blog_posts/${params['year']}/${params.month}/${params.day}/${params.id}.md`
+      const location = `${baseUrl}blog_posts/${params.year}/${params.month}/${params.day}/${params.id}.md`
       axios.get(location).then((data) => {
         loading.value = false
         rawPost.value = data.request.response
+      }).catch((error) => {
+        if (error.response.status === 404) {
+          loading.value = false
+          rawPost.value = 'No Such Post is Available'
+        }
       })
     })
     const extensions = [
