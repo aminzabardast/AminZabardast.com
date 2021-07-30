@@ -1,12 +1,18 @@
 <template>
-  <v-app>
+  <v-app class="app-main">
     <TopLine/>
-    <v-container class="app-main">
-      <Header></Header>
-      <v-main class="body">
-        <router-view></router-view>
-      </v-main>
-      <Footer></Footer>
+    <v-container class="app-column" style="height: 100%">
+      <v-row>
+        <Header></Header>
+      </v-row>
+      <v-row>
+        <v-main class="body">
+          <router-view></router-view>
+        </v-main>
+      </v-row>
+      <v-row>
+        <Footer></Footer>
+      </v-row>
     </v-container>
   </v-app>
 </template>
@@ -28,9 +34,12 @@ export default defineComponent({
 </script>
 
 <style>
-  .app-main {
+  .app-column {
     width: 650px;
     background: white;
     padding-top: 10px !important;
+  }
+  .app-main {
+    background-color: #def0ec !important;
   }
 </style>

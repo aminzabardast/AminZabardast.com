@@ -30,13 +30,13 @@ export default defineComponent({
 a {
   text-decoration: none;
   font-weight: bolder;
-  color: black;
+  color: black !important;
 }
 a:hover {
-  color: #00a693;
+  color: #00a693 !important;
 }
 .router-link-active,
 .router-link-exact-active {
-  color: #00a693;
+  color: #00a693 !important;
 }
 </style>
