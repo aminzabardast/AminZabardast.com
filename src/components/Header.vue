@@ -1,5 +1,4 @@
 <template>
-<!--  TODO: Add avatar -->
   <v-row class="mt-1">
     <v-col
         align="center"
