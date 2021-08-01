@@ -22,7 +22,7 @@ export default new Store({
     blogPosts: [
       {
         date: Date.parse('2021-07-27T10:00:00'),
-        active: true,
+        active: false,
         favorite: true,
         category: 0,
         id: 'test-blog-post',
@@ -61,6 +61,7 @@ export default new Store({
         }, post)
         return post
       })
+      posts = posts.filter(post => post.active)
       posts = orderBy(posts, ['date'], ['desc'])
       return posts
     },
