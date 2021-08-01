@@ -15,6 +15,7 @@
                 x-small
                 :dark="false"
                 depressed
+                @click="goToTop"
             >
               <v-icon>
                 mdi-chevron-up
@@ -29,11 +30,26 @@
 </template>
 
 <script lang="js">
-import { defineComponent } from '@vue/composition-api'
+import { defineComponent, onMounted } from '@vue/composition-api'
+import $ from 'jquery'
 
 export default defineComponent({
   name: 'Footer',
-  setup () {}
+  setup () {
+    const goToTop = () => {
+      $('html, body').animate({ scrollTop: 0 }, 'slow');
+    }
+    const catchScroll = (a) => {
+      //console.log(a)
+    }
+    onMounted(() => {
+      window.addEventListener('scroll', catchScroll)
+    })
+
+    return {
+      goToTop
+    }
+  }
 })
 </script>
 

@@ -67,7 +67,7 @@ a:hover {
   display: inline-block;
 }
 .date-block {
-  width: 150px;
+  width: 200px;
 }
 .title-block {}
 .favorite-block {

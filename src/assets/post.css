@@ -42,3 +42,9 @@
     padding: 0;
     margin: 0;
 }
+
+.post-container hr {
+    margin-bottom: 25px;
+    color: #def0ec;
+    border-top: 1px solid;
+}

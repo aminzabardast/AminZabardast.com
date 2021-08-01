@@ -57,11 +57,10 @@ export default new Store({
           month: month,
           day: day,
           url: `/blog/${year}/${month}/${day}/${post.id}`,
-          dateString: format(post.date, 'MMM d Y')
+          dateString: format(post.date, 'do MMMM Y')
         }, post)
         return post
-      })
-      posts = posts.filter(post => post.active)
+      }).filter(post => post.active)
       posts = orderBy(posts, ['date'], ['desc'])
       return posts
     },

@@ -1,5 +1,7 @@
 # Title of the Blog
 
+---
+
 **Lorem ipsum** ~~dolor sit amet~~, *consectetur adipiscing* [elit](http://google.com). In dignissim in neque ac tincidunt. Integer bibendum quam erat, eget fringilla libero vehicula ac. Sed in pellentesque magna, non laoreet leo. Sed eget accumsan felis. Ut tempus augue eu nisi imperdiet, a ornare sapien bibendum. Donec viverra scelerisque eleifend. Mauris a dapibus tellus, eget ultrices mauris. Nunc molestie scelerisque lorem id tincidunt. Pellentesque finibus nisi sit amet condimentum tincidunt. Donec euismod felis nunc. Duis ac lectus faucibus sapien suscipit dapibus eu in lorem.
 
 | Name | Last Name |

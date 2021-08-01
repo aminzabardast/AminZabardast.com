@@ -1,5 +1,7 @@
 # You do not need to be a developer to use Git
 
+---
+
 ![](https://miro.medium.com/max/1400/0*tnKDnZZokHzO9pph)
 *Photo by Fré [Sonneveld](https://unsplash.com/@fresonneveld) on [Unsplash](https://unsplash.com).*
 

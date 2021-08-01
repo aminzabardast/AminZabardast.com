@@ -1,5 +1,7 @@
 # The Beginning
 
+---
+
 ![Caption](https://miro.medium.com/max/1000/0*aPvTby_umP7wpd_n)
 *Photo by [Allie](https://unsplash.com/@wordsmithmedia) on [Unsplash](https://unsplash.com/)*
 

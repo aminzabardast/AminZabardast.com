@@ -4,7 +4,6 @@
       <p>
         Hey! I'm Amin.
         Welcome to my personal corner of the internet.
-        I am interested in Data Science, Computer Graphics, Reading Books (Fiction or Non-Fiction), writing, and Problem Solving.
       </p>
       <p>
         Here are the most recent posts I have written.
@@ -14,6 +13,7 @@
     </div>
     <blog-post-list
         :posts="last10BlogPosts"
+        category="Most Recent Blog Entries"
     ></blog-post-list>
   </v-container>
 </template>
