@@ -30,17 +30,27 @@ export default defineComponent({
 </script>
 
 <style>
-  .app-column {
-    width: 650px;
-    background: white;
-    padding-top: 10px !important;
-    height: 100%;
-    position:relative;
-  }
-  .app {
-    background-color: #def0ec !important;
-  }
-  .main {
-    padding-bottom: 100px !important;
-  }
+.app-column {
+  width: 650px;
+  background: white;
+  padding-top: 10px !important;
+  height: 100%;
+  position:relative;
+}
+.app {
+  background-color: #def0ec !important;
+}
+.main {
+  padding-bottom: 100px !important;
+}
+a {
+  color: black !important;
+}
+a:hover {
+  color: #00a693 !important;
+}
+.router-link-active,
+.router-link-exact-active {
+  color: #00a693 !important;
+}
 </style>

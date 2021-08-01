@@ -1,8 +1,8 @@
 <template>
   <v-container>
     <blog-post-list-item
-        :posts="blogPosts"
-        category="Last 10 Posts"
+        :posts="favorites"
+        category="Favorites"
     ></blog-post-list-item>
   </v-container>
 </template>
@@ -13,15 +13,15 @@ import useStore from '@/hooks/store'
 import BlogPostListItem from '@/components/Blog/ListPosts'
 
 export default defineComponent({
-  name: 'BlogPostList',
+  name: 'BlogFavoritePosts',
   components: {
     BlogPostListItem
   },
   setup () {
     const { store } = useStore()
-    const blogPosts = ref(store.getters.getAllPosts)
+    const favorites = ref(store.getters.getFavoritePosts)
     return {
-      blogPosts
+      favorites
     }
   }
 })

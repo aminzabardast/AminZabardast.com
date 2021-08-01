@@ -10,11 +10,13 @@ export default new Store({
     categories: [
       {
         title: 'No Categories',
-        id: 0
+        id: 0,
+        order: 2
       },
       {
         title: 'Book Reviews',
-        id: 1
+        id: 1,
+        order: 1
       }
     ],
     blogPosts: [
@@ -22,38 +24,14 @@ export default new Store({
         date: Date.parse('2021-07-27T10:00:00'),
         active: true,
         favorite: true,
-        category: 1,
+        category: 0,
         id: 'test-blog-post',
         title: 'Post 1'
       },
       {
-        date: Date.parse('2021-07-27T12:00:00'),
-        active: true,
-        favorite: false,
-        category: 1,
-        id: 'test-blog-post',
-        title: 'Post 2'
-      },
-      {
-        date: Date.parse('2021-07-25T00:00:00'),
-        active: true,
-        favorite: false,
-        category: 1,
-        id: 'test-blog-post',
-        title: 'Post 3'
-      },
-      {
-        date: Date.parse('2021-12-26T00:00:00'),
-        active: true,
-        favorite: true,
-        category: 1,
-        id: 'test-blog-post',
-        title: 'Post 4'
-      },
-      {
         date: Date.parse('2020-09-26T00:00:00'),
         active: true,
-        favorite: false,
+        favorite: true,
         category: 0,
         id: 'the-beginning',
         title: 'The Beginning'
@@ -69,7 +47,7 @@ export default new Store({
     ]
   },
   getters: {
-    getAllPosts (state) {
+    getAllPosts: state => {
       let posts = state.blogPosts.map(post => {
         const year = format(post.date, 'Y')
         const month = format(post.date, 'MM')
@@ -86,10 +64,27 @@ export default new Store({
       posts = orderBy(posts, ['date'], ['desc'])
       return posts
     },
-    get10latestPosts (state, getters) {
-      return getters.getAllPosts.slice(0, 2)
+    get10latestPosts: (state, getters) => {
+      return getters.getAllPosts.slice(0, 10)
+    },
+    getFavoritePosts: (state, getters) => {
+      return getters.getAllPosts.filter(post => post.favorite)
+    },
+    getPostsByCategory: (state, getters) => (categoryID) => {
+      return getters.getAllPosts.filter(post => post.category === categoryID)
+    },
+    getAllCategories: state => {
+      return state.categories
+    },
+    getPostsByCategories: (state, getters) => {
+      const categories = getters.getAllCategories
+      categories.map(category => {
+        assign(category, {
+          posts: getters.getPostsByCategory(category.id)
+        }, category)
+      })
+      return orderBy(categories, ['order'], ['asc'])
     }
-
   }
 })
 

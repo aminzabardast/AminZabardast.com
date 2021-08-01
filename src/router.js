@@ -24,8 +24,13 @@ export default new VueRouter({
       children: [
         {
           path: '',
-          name: 'blog_post_list',
-          component: () => import('./views/Blog/BlogPostList')
+          name: 'blog_posts',
+          component: () => import('./views/Blog/BlogPosts')
+        },
+        {
+          path: 'favorites',
+          name: 'favorite_posts',
+          component: () => import('./views/Blog/BlogFavoritePosts')
         },
         {
           path: ':year/:month/:day/:id',

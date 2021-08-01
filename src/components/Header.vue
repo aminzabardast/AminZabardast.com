@@ -8,7 +8,6 @@
       <div>
         <router-link class="name" to="/">
           <v-avatar
-              color="primary"
               size="192"
           >
             <img
@@ -54,13 +53,5 @@ export default defineComponent({
 <style scoped>
 a {
   text-decoration: none;
-  color: black !important;
-}
-a:hover {
-  color: #00a693 !important;
-}
-.router-link-active,
-.router-link-exact-active {
-  color: #00a693 !important;
 }
 </style>

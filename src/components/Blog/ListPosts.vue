@@ -1,19 +1,27 @@
 <template>
-  <v-container class="pb-10 body-1">
+  <v-container
+      class="pb-10 body-1"
+  >
     <div
         class="pb-5 text-h6"
+        v-if="category"
     >
       {{ category }}
     </div>
     <div
-        v-for="post in posts"
-        v-bind:key="post.id"
+        v-if="posts.length"
     >
-      <router-link :to="post.url">
+      <div
+          v-for="post in posts"
+          v-bind:key="post.id"
+      >
+        <router-link
+            :to="post.url"
+        >
         <span class="block date-block">
-          {{ post.dateString }}
+            {{ post.dateString }}
         </span>
-        <span class="block favorite-block">
+          <span class="block favorite-block">
           <v-icon
               small
               v-if="post.favorite"
@@ -22,27 +30,29 @@
             mdi-star
           </v-icon>
         </span>
-        <span class="block title-block">{{ post.title }}</span>
-      </router-link>
+          <span class="block title-block">
+          {{ post.title }}
+        </span>
+        </router-link>
+      </div>
+    </div>
+    <div
+        v-else
+    >
+      No Posts Here!
     </div>
   </v-container>
 </template>
 
 <script lang="js">
-import { defineComponent, ref } from '@vue/composition-api'
+import { defineComponent } from '@vue/composition-api'
 
 export default defineComponent({
   name: 'ListPosts',
   props: [
-      'posts',
-      'category'
-  ],
-  setup (props) {
-    const posts = ref(props.posts)
-    return {
-      posts
-    }
-  }
+    'posts',
+    'category'
+  ]
 })
 </script>
 
