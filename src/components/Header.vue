@@ -9,7 +9,7 @@
         <router-link class="name" to="/">
           <v-avatar
               color="primary"
-              size="196"
+              size="192"
           >
             <img
                 src="../assets/amin2.jpg"
@@ -25,24 +25,19 @@
         <span class="pr-2"><router-link to="/about">About</router-link></span>
         <span class="pr-2">/</span>
         <span class="pr-2"><a href="http://twitter.com/AminZabardast" target="_blank">
-          <v-icon
-            color="cyan"
-          >
+          <v-icon color="cyan">
             mdi-twitter
           </v-icon>
           Twitter
         </a></span>
         <span class="pr-2">/</span>
         <span class="pr-2"><a href="http://github.com/AminZabardast" target="_blank">
-          <v-icon
-            color="black"
-          >
+          <v-icon color="black">
             mdi-github
           </v-icon>
           Github
         </a></span>
       </div>
-
     </v-col>
   </v-row>
 </template>

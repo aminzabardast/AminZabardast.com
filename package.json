@@ -17,6 +17,7 @@
     "@vue/composition-api": "^1.0.3",
     "axios": "^0.21.1",
     "date-fns": "^2.23.0",
+    "lodash": "^4.17.21",
     "showdown-highlight": "^2.1.8",
     "vue": "^2.6.14",
     "vue-router": "^3.5.2",

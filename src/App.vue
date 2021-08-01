@@ -14,10 +14,10 @@
 </template>
 
 <script lang="js">
-import TopLine from "./components/TopLine";
+import TopLine from "@/components/TopLine";
 import { defineComponent } from '@vue/composition-api'
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 
 export default defineComponent({
   name: 'App',

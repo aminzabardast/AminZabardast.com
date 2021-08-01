@@ -47,5 +47,7 @@ export default defineComponent({
 </script>
 
 <style>
-
+img {
+  width: 100%;
+}
 </style>
