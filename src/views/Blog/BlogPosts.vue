@@ -1,8 +1,8 @@
 <template>
   <v-container>
-    <div class="pa-3 pb-8">
+    <p class="pa-3 pb-8">
       View all my <router-link to="/blog/favorites">favorite posts</router-link>.
-    </div>
+    </p>
     <div v-for="category in postsByCategories" v-bind:key="category.id">
       <blog-post-list-item
           :posts="category.posts"

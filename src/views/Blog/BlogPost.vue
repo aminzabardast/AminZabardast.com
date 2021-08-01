@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container class="post-container">
     <div v-if="loading">Loading ...</div>
     <VueShowdown
       :markdown="rawPost"
@@ -13,6 +13,7 @@ import { defineComponent, ref, onMounted } from '@vue/composition-api'
 import showdownHighlight from 'showdown-highlight'
 import axios from 'axios'
 import 'highlight.js/styles/github.css'
+import '@/assets/post.css'
 
 export default defineComponent({
   name: 'BlogPost',
@@ -46,8 +47,6 @@ export default defineComponent({
 })
 </script>
 
-<style>
-img {
-  width: 100%;
-}
+<style scoped>
+
 </style>

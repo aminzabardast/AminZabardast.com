@@ -1,13 +1,13 @@
 <template>
   <v-container
-      class="pb-10 body-1"
+      class="pb-10"
   >
-    <div
-        class="pb-5 text-h6"
+    <h3
+        class="pb-2"
         v-if="category"
     >
       {{ category }}
-    </div>
+    </h3>
     <div
         v-if="posts.length"
     >

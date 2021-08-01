@@ -4,8 +4,10 @@
       <p>
         Hey! I'm Amin.
         Welcome to my personal corner of the internet.
-        I am interested in Data Science, Computer Graphics, Reading Books (Fiction or Non-Fiction), and Problem Solving.
-        Here's the most recent posts I have written.
+        I am interested in Data Science, Computer Graphics, Reading Books (Fiction or Non-Fiction), writing, and Problem Solving.
+      </p>
+      <p>
+        Here are the most recent posts I have written.
         A complete list is available in the <router-link to="/blog">Blog</router-link> section.
         Enjoy!
       </p>
@@ -37,5 +39,13 @@ export default defineComponent({
 </script>
 
 <style scoped>
+* {
+  font-family: 'Georgia', sans-serif;
+}
+</style>
 
+<style>
+p {
+  font-size: 1.1em;
+}
 </style>

@@ -21,6 +21,7 @@ Is it going to be formal? Or maybe casual.
 So far, I have been indecisive, but I am determined to enjoy the journey.
 
 > “With insufficient data it is easy to go wrong.”
+> 
 > — Carl Sagan
 
 All the answers are behind the fog of the future, and at this state, speculation is not helpful.
