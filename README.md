@@ -17,12 +17,12 @@ yarn build
 
 ### Run your tests
 ```
-npm test
+yarn test
 ```
 
 ### Lints and fixes files
 ```
-npm lint
+yarn lint
 ```
 
 ### Customize configuration

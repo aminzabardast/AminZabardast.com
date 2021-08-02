@@ -1,10 +1,11 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import Home from './views/Home.vue'
+import VueRouter from 'vue-router'
+import Home from '@/views/Home'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
+export default new VueRouter({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -14,10 +15,29 @@ export default new Router({
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      component: () => import('./views/About')
+    },
+    {
+      path: '/blog',
+      name: 'blog',
+      component: () => import('./views/Blog/Blog'),
+      children: [
+        {
+          path: '',
+          name: 'blog_posts',
+          component: () => import('./views/Blog/BlogPosts')
+        },
+        {
+          path: 'favorites',
+          name: 'favorite_posts',
+          component: () => import('./views/Blog/BlogFavoritePosts')
+        },
+        {
+          path: ':year/:month/:day/:id',
+          name: 'blog_post',
+          component: () => import('./views/Blog/BlogPost')
+        }
+      ]
     }
   ]
 })

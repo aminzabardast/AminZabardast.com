@@ -30,59 +30,63 @@
     </v-container>
 </template>
 
-<script>
-    export default {
-        name: "Logo",
-        data () {
-            return {
-                title: "I'm Amin Zabardast",
-                smallMsgs: [
-                    "I mess around with data, I enjoy computer graphics,",
-                    "and I like combining these two.",
-                    "An advocate of any creative process."
-                ],
-                links: [
-                    {
-                        order: 5,
-                        icon: ['fas', 'envelope'],
-                        tooltip: 'zabardast.amin@metu.edu.tr',
-                        href: 'mailto:zabardast.amin@metu.edu.tr'
-                    },
-                    {
-                        order: 1,
-                        icon: ['fab', 'github'],
-                        tooltip: '/AminZabardast',
-                        href: 'http://github.com/AminZabardast'
-                    },
-                    {
-                        order: 2,
-                        icon: ['fab', 'linkedin'],
-                        tooltip: '/AminZabardast',
-                        href: 'http://linkedin.com/in/AminZabardast'
-                    },
-                    {
-                        order: 3,
-                        icon: ['fab', 'twitter'],
-                        tooltip: '@AminZabardast',
-                        href: 'http://twitter.com/AminZabardast'
-                    },
-                    {
-                        order: 4,
-                        icon: ['fab', 'instagram'],
-                        tooltip: '@AminZabardast',
-                        href: 'http://instagram.com/AminZabardast'
-                    }
-                ]
-            }
-        },
-        computed: {
-            orderedLinks () {
-                return this.links.slice().sort((a,b) => {
-                    return a.order > b.order ? 1 : -1
-                })
-            }
-        }
+<script lang="js">
+import { ref, defineComponent, computed } from '@vue/composition-api'
+
+export default defineComponent({
+  name: 'Logo',
+  setup() {
+    const title = ref('I\'m Amin Zabardast')
+    const smallMsgs = ref([
+      "I mess around with data, I enjoy computer graphics,",
+      "and I like combining these two.",
+      "An advocate of any creative process."
+    ])
+    const links = ref([
+      {
+        order: 5,
+        icon: ['fas', 'envelope'],
+        tooltip: 'zabardast.amin@metu.edu.tr',
+        href: 'mailto:zabardast.amin@metu.edu.tr'
+      },
+      {
+        order: 1,
+        icon: ['fab', 'github'],
+        tooltip: '/AminZabardast',
+        href: 'http://github.com/AminZabardast'
+      },
+      {
+        order: 2,
+        icon: ['fab', 'linkedin'],
+        tooltip: '/AminZabardast',
+        href: 'http://linkedin.com/in/AminZabardast'
+      },
+      {
+        order: 3,
+        icon: ['fab', 'twitter'],
+        tooltip: '@AminZabardast',
+        href: 'http://twitter.com/AminZabardast'
+      },
+      {
+        order: 4,
+        icon: ['fab', 'instagram'],
+        tooltip: '@AminZabardast',
+        href: 'http://instagram.com/AminZabardast'
+      }
+    ])
+    const orderedLinks = computed(() => links.value.slice().sort((a,b) => {
+      return a.order > b.order ? 1 : -1
+    }))
+    console.log(orderedLinks)
+    return {
+      title,
+      smallMsgs,
+      links,
+      orderedLinks
     }
+  }
+
+})
 </script>
 
 <style scoped>
