@@ -31,7 +31,7 @@ export default defineComponent({
 
 <style>
 .app-column {
-  width: 650px;
+  max-width: 650px;
   background: white;
   padding-top: 10px !important;
   height: 100%;
