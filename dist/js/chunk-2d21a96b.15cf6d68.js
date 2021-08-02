@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21a96b"],{bbc8:function(e,n,t){"use strict";t.r(n);var c=function(){var e=this,n=e.$createElement,t=e._self._c||n;return t("router-view")},a=[],r=t("a6f4"),u=Object(r["b"])({name:"Blog"}),o=u,b=t("2877"),l=Object(b["a"])(o,c,a,!1,null,"0e2d26c6",null);n["default"]=l.exports}}]);
+//# sourceMappingURL=chunk-2d21a96b.15cf6d68.js.map
