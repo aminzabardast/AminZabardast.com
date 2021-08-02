@@ -18,7 +18,7 @@
     <h2>Let's have a correspondence</h2>
     <p>
       I’m on Twitter at <a href="https://twitter.com/AminZabardast">@AminZabardast</a> and my email address is
-      <a href="mailto:aminzabardast@gmail.com">aminzabardast@gmail.com</a>. I love hearing from people, and I try to reply to everyone and as much as possible.
+      <a href="mailto:aminzabardast@gmail.com">aminzabardast@gmail.com</a>. I love hearing from people, and I try to reply to everyone.
     </p>
   </v-container>
 </template>
