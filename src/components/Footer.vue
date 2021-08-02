@@ -9,28 +9,36 @@
       <v-row>
         <v-col align="center" align-self="center">
           <span class="pr-2">&copy; Amin Zabardast</span>
-          <span class="pr-2">/</span>
-          <span class="pr-2">
-            <v-btn
-                x-small
-                :dark="false"
-                depressed
-                @click="goToTop"
-            >
-              <v-icon>
-                mdi-chevron-up
-              </v-icon>
-              Back To Top
-            </v-btn>
-          </span>
         </v-col>
       </v-row>
+      <v-tooltip
+          left
+          v-if="showScrollTop"
+          class="to-top-button"
+      >
+        <template
+            v-slot:activator="{ on, attrs }"
+        >
+          <v-btn
+              v-bind="attrs"
+              v-on="on"
+              fab
+              class="to-top-button"
+              @click="goToTop"
+          >
+            <v-icon>
+              mdi-chevron-up
+            </v-icon>
+          </v-btn>
+        </template>
+        <span>Go To Top</span>
+      </v-tooltip>
     </v-container>
   </v-row>
 </template>
 
 <script lang="js">
-import { defineComponent, onMounted } from '@vue/composition-api'
+import { defineComponent, onMounted, ref } from '@vue/composition-api'
 import $ from 'jquery'
 
 export default defineComponent({
@@ -39,15 +47,17 @@ export default defineComponent({
     const goToTop = () => {
       $('html, body').animate({ scrollTop: 0 }, 'slow');
     }
-    const catchScroll = (a) => {
-      //console.log(a)
+    const showScrollTop = ref(false)
+    const catchScroll = () => {
+      const scrollTop = $('html').scrollTop()
+      showScrollTop.value = scrollTop > 300
     }
     onMounted(() => {
       window.addEventListener('scroll', catchScroll)
     })
-
     return {
-      goToTop
+      goToTop,
+      showScrollTop
     }
   }
 })
@@ -58,5 +68,10 @@ export default defineComponent({
   position: absolute;
   width: 100%;
   bottom: 20px;
+}
+.to-top-button {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
 }
 </style>

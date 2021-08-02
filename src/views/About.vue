@@ -2,10 +2,10 @@
   <v-container class="post-container">
     <h2>About this blog</h2>
     <p>
-      I have <router-link to="/blog/2020/09/26/the-beginning">tried to make a habit of writing so many times</router-link> I've lost count of it.
-      But I am resiliant.
+      I have <router-link to="/blog/2020/09/26/the-beginning">tried to make a habit of writing</router-link> so many times I've lost count of it.
+      But I am resilient.
       This blog is my latest - and hopefully last - attempt to become a writer who writes regularly.
-      I like to write about many thing but it is too early to come up with any predictions.
+      I like to write about many thing but it is too early to commit to a fixed list.
       This will be updated.
     </p>
     <h2>About me</h2>
