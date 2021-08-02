@@ -11,7 +11,4 @@ export default defineComponent({
 </script>
 
 <style scoped>
-* {
-  font-family: 'Georgia', sans-serif;
-}
 </style>

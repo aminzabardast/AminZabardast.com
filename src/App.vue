@@ -30,7 +30,6 @@ export default defineComponent({
 </script>
 
 <style>
-@import url('http://fonts.cdnfonts.com/css/georgia');
 .app-column {
   width: 650px;
   background: white;

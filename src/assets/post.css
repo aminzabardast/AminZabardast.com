@@ -1,5 +1,5 @@
 .post-container {
-    font-family: 'Georgia', sans-serif;
+    font-family: "Georgia", "Montserrats", serif;
 }
 
 .post-container img {
@@ -41,6 +41,11 @@
 .post-container blockquote p {
     padding: 0;
     margin: 0;
+    font-size: 1.1em;
+}
+
+.post-container p {
+    font-size: 1.1em;
 }
 
 .post-container hr {

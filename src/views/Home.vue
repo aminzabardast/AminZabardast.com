@@ -39,13 +39,11 @@ export default defineComponent({
 </script>
 
 <style scoped>
-* {
-  font-family: 'Georgia', sans-serif;
-}
 </style>
 
 <style>
 p {
+  font-family: "Georgia", "Montserrats", serif;
   font-size: 1.1em;
 }
 </style>

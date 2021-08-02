@@ -11,12 +11,17 @@ export default new Store({
       {
         title: 'No Categories',
         id: 0,
-        order: 2
+        order: 3
       },
       {
         title: 'Book Reviews',
         id: 1,
-        order: 1
+        order: 2
+      },
+      {
+        title: 'Let\'s Reinvent the Wheel',
+        id: 2,
+        order: 1,
       }
     ],
     blogPosts: [
