@@ -1,46 +1,31 @@
 {
-  "name": "aminzabardast-portfolio",
-  "version": "0.1.0",
-  "private": false,
+  "name": "aminzabardast.com",
+  "version": "0.0.1",
+  "private": true,
+  "main": "src/index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint",
-    "deploy": "gh-pages -d dist"
+    "start": "react-scripts start",
+    "serve": "serve -s build",
+    "build": "react-scripts build"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.17",
-    "@fortawesome/free-brands-svg-icons": "^5.8.1",
-    "@fortawesome/free-regular-svg-icons": "^5.8.1",
-    "@fortawesome/free-solid-svg-icons": "^5.8.1",
-    "@fortawesome/vue-fontawesome": "^2.0.2",
-    "@vue/composition-api": "^1.0.3",
-    "axios": "^0.21.1",
-    "date-fns": "^2.23.0",
-    "jquery": "^3.6.0",
-    "lodash": "^4.17.21",
-    "showdown-highlight": "^2.1.8",
-    "vue": "^2.6.14",
-    "vue-router": "^3.5.2",
-    "vue-showdown": "2",
-    "vuetify": "^2.4.0",
-    "vuex": "^3.6.2"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@vue/cli-plugin-babel": "^3.5.0",
-    "@vue/cli-plugin-eslint": "^4.5.13",
-    "@vue/cli-service": "^3.5.0",
-    "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
-    "eslint-plugin-vue": "^5.0.0",
-    "gh-pages": "^3.2.3",
-    "sass": "~1.32.0",
-    "sass-loader": "^10.0.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.1",
-    "vue-cli-plugin-vuetify": "^2.4.1",
-    "vue-template-compiler": "^2.5.21",
-    "vuetify-loader": "^1.7.2"
+    "react-scripts": "^5.0.1",
+    "serve": "^14.2.1"
   },
-  "homepage": "https://github.com/aminzabardast/AminZabardast.com.git"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
 }
