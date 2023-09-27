@@ -7,7 +7,6 @@ import Header from './Components/Header'
 
 function App() {
     const [theme, setTheme] = useState(lightTheme)
-
     const toggleTheme = () => {
         if (theme === lightTheme) {
             setTheme(darkTheme)
