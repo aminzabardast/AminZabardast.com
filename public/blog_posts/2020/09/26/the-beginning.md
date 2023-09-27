@@ -3,6 +3,7 @@
 ---
 
 ![Caption](https://miro.medium.com/max/1000/0*aPvTby_umP7wpd_n)
+
 *Photo by [Allie](https://unsplash.com/@wordsmithmedia) on [Unsplash](https://unsplash.com/)*
 
 For a graduate student who should be reading and composing articles like his life depends on it, I have had a tough time initiating a blog.
