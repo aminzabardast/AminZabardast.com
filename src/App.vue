@@ -8,11 +8,20 @@ import { RouterView } from 'vue-router'
   </main>
 </template>
 
-<style scoped>
-header {
-  background-color: antiquewhite;
+<style lang="css">
+/* Light mode */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: white;
+    color: black;
+  }
 }
-main {
-  background-color: powderblue;
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: black;
+    color: white;
+  }
 }
 </style>
