@@ -7,5 +7,6 @@ h1 {
   padding: 10px;
   margin: 10px;
   background-color: firebrick;
+  font-size: 1.6em;
 }
 </style>
