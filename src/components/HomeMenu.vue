@@ -3,8 +3,12 @@ import {} from 'vue-router'
 </script>
 
 <template>
-  <RouterLink to="/blog">Blog</RouterLink>
-  <RouterLink to="/about">About</RouterLink>
+  <div>
+    <RouterLink to="/blog">Blog</RouterLink>
+  </div>
+  <div>
+    <RouterLink to="/about">About</RouterLink>
+  </div>
 </template>
 
 <style lang="css" scoped>
@@ -13,5 +17,6 @@ a {
   padding: 10px;
   margin: 10px;
   background-color: cadetblue;
+  text-align: center;
 }
 </style>
