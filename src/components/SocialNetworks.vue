@@ -12,7 +12,6 @@ export interface Props {
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  items: [],
   height: 25
 })
 
