@@ -75,7 +75,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  max-width: 450px;
+  max-width: 500px;
 }
 .content-column {
   flex-direction: column;
