@@ -8,7 +8,7 @@
 <style lang="css" scoped>
 p {
   padding: 10px;
-  margin: 0px;
+  margin: 0;
   text-align: center;
   font-style: italic;
   font-size: 1.1em;
