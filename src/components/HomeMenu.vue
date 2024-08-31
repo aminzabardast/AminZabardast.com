@@ -14,8 +14,8 @@ import {} from 'vue-router'
 <style lang="css" scoped>
 a {
   display: block;
-  padding: 2px;
-  margin: 10px;
+  margin: 5px;
   text-align: center;
+  font-size: 1.5em;
 }
 </style>
