@@ -4,19 +4,18 @@ import {} from 'vue-router'
 
 <template>
   <div>
-    <RouterLink to="/blog">Blog</RouterLink>
+    <RouterLink class="hidden-link" to="/blog">Blog</RouterLink>
   </div>
   <div>
-    <RouterLink to="/about">About</RouterLink>
+    <RouterLink class="hidden-link" to="/about">About</RouterLink>
   </div>
 </template>
 
 <style lang="css" scoped>
 a {
   display: block;
-  padding: 10px;
+  padding: 2px;
   margin: 10px;
-  background-color: cadetblue;
   text-align: center;
 }
 </style>

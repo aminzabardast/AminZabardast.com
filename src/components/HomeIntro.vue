@@ -9,8 +9,8 @@
 p {
   padding: 10px;
   margin: 10px;
-  background-color: darkcyan;
   text-align: center;
-  font-size: 0.7em;
+  font-style: italic;
+  font-size: 1em;
 }
 </style>

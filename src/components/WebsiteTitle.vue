@@ -4,9 +4,8 @@
 
 <style lang="css" scoped>
 h1 {
-  padding: 10px;
+  font-family: 'Unica One', sans-serif;
   margin: 10px;
-  background-color: firebrick;
-  font-size: 1.6em;
+  font-size: 2.2em;
 }
 </style>
