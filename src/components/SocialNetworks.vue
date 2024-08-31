@@ -22,7 +22,13 @@ const margin = computed(() => {
 </script>
 
 <template>
-  <a v-for="item in props.items" :key="item.url" :href="item.url" target="_blank">
+  <a
+    v-for="item in props.items"
+    :key="item.url"
+    :href="item.url"
+    target="_blank"
+    class="hidden-link"
+  >
     <svg
       :width="props.height"
       :height="props.height"
