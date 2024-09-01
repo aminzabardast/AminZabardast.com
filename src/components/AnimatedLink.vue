@@ -13,6 +13,7 @@ import { computed } from 'vue'
 export interface Props {
   href?: string
   color: string
+  backgroundColor?: string
   target?: '_blank' | ''
   underline?: boolean
 }
@@ -20,7 +21,8 @@ export interface Props {
 const props = withDefaults(defineProps<Props>(), {
   target: '',
   mode: '',
-  underline: false
+  underline: false,
+  backgroundColor: 'inherit'
 })
 
 const spanHeight = computed(() => {
@@ -32,6 +34,7 @@ const spanHeight = computed(() => {
 a {
   position: relative;
   bottom: 0;
+  background-color: v-bind('$props.backgroundColor');
 }
 
 a div {
