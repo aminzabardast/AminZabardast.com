@@ -1,7 +1,7 @@
 <template>
   <p>
-    This is a medium medium medium medium medium medium medium medium medium medium length
-    explanation.
+    Data Scientist, Software Developer,<br />
+    Creative Problem Solver, Tech Enthusiast
   </p>
 </template>
 
@@ -11,7 +11,7 @@ p {
   margin: 0;
   text-align: center;
   font-style: italic;
-  font-size: 1.1em;
-  letter-spacing: 0.06em;
+  font-size: 1em;
+  letter-spacing: 0.1em;
 }
 </style>
