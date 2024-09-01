@@ -1,7 +1,8 @@
 <template>
   <p>
-    Data Scientist, Software Developer,<br />
-    Creative Problem Solver, Tech Enthusiast
+    Data Scientist, Researcher,<br />
+    Software Developer, Creative Problem Solver,<br />
+    Tech Enthusiast
   </p>
 </template>
 
