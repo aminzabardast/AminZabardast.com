@@ -1,0 +1,7 @@
+services:
+  node-build:
+    container_name: 'AminZabardast.com'
+    image: 'AminZabardast/personal-website'
+    build: .
+    ports:
+      - 8080:8080
