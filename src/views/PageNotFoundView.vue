@@ -22,7 +22,9 @@ const buttonColor = computed(() => {
       <span class="icon">😵</span>
     </p>
     <div>
-      <Link href="/" :color="PASTEL3" :backgroundColor="buttonColor">Go to Home Page</Link>
+      <Link :color="PASTEL3" :background-color="buttonColor">
+        <RouterLink to="/" class="abc">Go To Homepage</RouterLink>
+      </Link>
     </div>
   </div>
 </template>
@@ -55,5 +57,6 @@ div.page div a {
   margin: 10px;
   width: 100px;
   color: inherit;
+  text-decoration: none;
 }
 </style>
