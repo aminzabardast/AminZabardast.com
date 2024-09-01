@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import Link from '@/components/AnimatedLink.vue'
 
 export type SocialMediaItem = {
   url: string
   path: string
+  color: string
 }
 
 export interface Props {
@@ -21,12 +23,13 @@ const margin = computed(() => {
 </script>
 
 <template>
-  <a
+  <Link
     v-for="item in props.items"
     :key="item.url"
     :href="item.url"
     target="_blank"
-    class="hidden-link"
+    :color="item.color"
+    underline
   >
     <svg
       :width="props.height"
@@ -39,12 +42,12 @@ const margin = computed(() => {
     >
       <path :d="item.path" />
     </svg>
-  </a>
+  </Link>
 </template>
 
 <style lang="css" scoped>
 a {
-  margin: v-bind('margin');
+  padding: v-bind('margin');
   display: inline-block;
 }
 /* Light mode */
