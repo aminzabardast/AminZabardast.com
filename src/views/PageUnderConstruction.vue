@@ -17,12 +17,9 @@ const buttonColor = computed(() => {
 
 <template>
   <div class="page">
+    <p class="text">Under Construction</p>
     <p>
       <span class="icon">🚧</span>
-    </p>
-    <p>Things are under construction</p>
-    <p>
-      <span class="icon">⚠️</span>
     </p>
     <div>
       <Link href="/" :color="PASTEL3" :backgroundColor="buttonColor">Go to Home Page</Link>
@@ -41,6 +38,12 @@ div.page {
 
 div.page .icon {
   font-size: 6em;
+}
+div.page .text {
+  font-size: 2em;
+  padding: 0;
+  margin: 0;
+  letter-spacing: 0.15em !important;
 }
 
 div.page div {
