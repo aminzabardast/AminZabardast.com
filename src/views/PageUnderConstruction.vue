@@ -17,9 +17,9 @@ const buttonColor = computed(() => {
 
 <template>
   <div class="page">
-    <p class="text">Page Not Found</p>
+    <p class="text">Under Construction</p>
     <p>
-      <span class="icon">😵</span>
+      <span class="icon">🚧</span>
     </p>
     <div>
       <Link href="/" :color="PASTEL3" :backgroundColor="buttonColor">Go to Home Page</Link>

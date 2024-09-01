@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
-import AboutView from '@/views/AboutView.vue'
+import PageUnderConstruction from '@/views/PageUnderConstruction.vue'
 import PageNotFoundView from '@/views/PageNotFoundView.vue'
 
 const router = createRouter({
@@ -19,7 +19,28 @@ const router = createRouter({
     {
       path: '/about',
       name: 'About',
-      component: AboutView
+      component: PageUnderConstruction
+    },
+    {
+      path: '/medium',
+      name: 'Medium',
+      component: PageUnderConstruction
+    },
+    {
+      path: '/photos',
+      redirect: '/photos/featured',
+      children: [
+        {
+          path: 'featured',
+          name: 'Featured Photos',
+          component: PageUnderConstruction
+        },
+        {
+          path: 'favorites',
+          name: 'Favorite Photos',
+          component: PageUnderConstruction
+        }
+      ]
     }
   ]
 })
