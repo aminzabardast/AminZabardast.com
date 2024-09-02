@@ -1,27 +1,29 @@
 <script lang="ts" setup>
 import { RouterLink } from 'vue-router'
 import Link from './AnimatedLink.vue'
-import { PASTEL1, PASTEL2, PASTEL3, PASTEL4 } from '@/colors'
+import { rotatePastelColors } from '@/colors'
+
+const pastelColorGenerator = rotatePastelColors()
 </script>
 
 <template>
   <div class="menu-item">
-    <Link :color="PASTEL1">
+    <Link :color="pastelColorGenerator.next().value">
       <RouterLink to="/about">Get to Know Me a Bit Better</RouterLink>
     </Link>
   </div>
   <div class="menu-item">
-    <Link :color="PASTEL2">
+    <Link :color="pastelColorGenerator.next().value">
       <RouterLink to="/medium">Check Out My Latest Medium Musings</RouterLink>
     </Link>
   </div>
   <div class="menu-item">
-    <Link :color="PASTEL3">
+    <Link :color="pastelColorGenerator.next().value">
       <RouterLink to="/photos/featured">Peek at My Featured Photos on Unsplash</RouterLink>
     </Link>
   </div>
   <div class="menu-item">
-    <Link :color="PASTEL4">
+    <Link :color="pastelColorGenerator.next().value">
       <RouterLink to="/photos/favorites"
         >Browse My Top Picks from My Unsplash Collection</RouterLink
       >
