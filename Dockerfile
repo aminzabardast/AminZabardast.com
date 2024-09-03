@@ -14,4 +14,6 @@ COPY ./server/requirements.txt /code/requirements.txt
 RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 COPY ./server/app /code/app
 
-CMD ["fastapi", "run", "app/main.py", "--port", "8080"]
+COPY ./server/run.sh /code/run.sh
+CMD ["sh", "/code/run.sh"]
+

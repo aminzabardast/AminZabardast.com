@@ -5,3 +5,8 @@ services:
     build: .
     ports:
       - 8148:8080
+    environment:
+      - PRODUCTION=true # Change to `false` for Development
+    # volumes: # Enable for Development
+    #   - ./server/app:/code/app
+    restart: 'always'
