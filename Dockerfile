@@ -6,7 +6,7 @@ COPY ./ /code
 RUN pnpm i
 RUN pnpm build-only
 
-FROM python:3.9-slim as server
+FROM python:3.12-slim as server
 
 WORKDIR /code
 COPY --from=build /code/dist /code/dist
