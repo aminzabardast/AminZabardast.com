@@ -12,7 +12,7 @@ import { get, map } from 'lodash'
 const entries = ref([])
 
 const fetchFeed = async () => {
-    const response = await fetch('http://workstation.amnz.me:8148/api/v1/medium/')
+    const response = await fetch('/api/v1/medium/')
     const jsonResponse = await response.json()
     return jsonResponse as JSON
 }
