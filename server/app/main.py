@@ -6,7 +6,7 @@ from starlette.exceptions import HTTPException as StarletteHTTPException
 
 app = FastAPI()
 
-app.mount("/", StaticFiles(directory="/code/dist", html=True), name="app")
+app.mount("/", StaticFiles(directory="dist", html=True), name="app")
 
 # Any files that does not exist should load the `index.html`
 @app.exception_handler(StarletteHTTPException)
