@@ -14,7 +14,7 @@ const pastelColorGenerator = rotatePastelColors()
   </div>
   <div class="menu-item">
     <Link :color="pastelColorGenerator.next().value">
-      <RouterLink to="/medium">Check Out My Latest Medium Musings</RouterLink>
+      <RouterLink to="/blog">Check Out My Latest Medium Musings</RouterLink>
     </Link>
   </div>
   <div class="menu-item">
