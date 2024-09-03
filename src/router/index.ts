@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '@/views/HomeView.vue'
 import PageUnderConstruction from '@/views/PageUnderConstruction.vue'
 import PageNotFoundView from '@/views/PageNotFoundView.vue'
+import MediumView from '@/views/MediumView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -24,7 +25,7 @@ const router = createRouter({
     {
       path: '/medium',
       name: 'Medium',
-      component: PageUnderConstruction
+      component: MediumView
     },
     {
       path: '/photos',
