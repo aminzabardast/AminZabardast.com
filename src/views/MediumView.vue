@@ -5,11 +5,15 @@
 </template>
 
 <script lang="ts" setup>
-import { ref } from 'vue'
+import { ref, type Ref } from 'vue'
 import { get, map } from 'lodash'
 
+type Post = {
+    title: string
+}
+
 // FIXME: These are all temporary
-const entries = ref([])
+const entries = ref([]) as Ref<Post[]>
 
 const fetchFeed = async () => {
     const response = await fetch('/api/v1/medium/')
@@ -17,7 +21,7 @@ const fetchFeed = async () => {
     return jsonResponse as JSON
 }
 
-const processFeed = (jsonResponse: JSON) => {
+const processFeed = (jsonResponse: JSON): Post[] => {
     return map(get(jsonResponse, 'entries', []), (entry: JSON) => {
         return {
             title: get(entry, 'title', '')
