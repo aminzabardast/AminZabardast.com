@@ -4,14 +4,23 @@ from fastapi.responses import HTMLResponse
 from fastapi.exception_handlers import http_exception_handler
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from .routers import medium, unsplash
+from fastapi.middleware.cors import CORSMiddleware
 
 # Medium Data Server
 api_app_v1 = FastAPI()
+@api_app_v1.get('/')
+def api_route():
+    return {}
 api_app_v1.include_router(medium.router)
 api_app_v1.include_router(unsplash.router)
 
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*']
+)
+
 
 app.mount('/api/v1', api_app_v1)
 app.mount('/', StaticFiles(directory='dist', html=True), name='app')
