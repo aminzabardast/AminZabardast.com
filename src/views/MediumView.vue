@@ -1,14 +1,18 @@
 <template>
-    <div>Posts</div>
-    <hr />
-    <div v-if="loading">Loading ...</div>
-    <div v-else>
-        <div v-for="entry in entries" :key="entry.url">
-            {{ getYear(entry.published) }} / <a :href="entry.url">{{ entry.title }}</a> / {{ getMonthDay(entry.published) }}
-        </div>
-        <hr />
-        <div>Read More on Medium</div>
+  <div>Posts</div>
+  <hr />
+  <div v-if="loading">Loading ...</div>
+  <div v-else>
+    <div v-for="entry in entries" :key="entry.url">
+      {{ getYear(entry.published) }}
+      /
+      <a :href="entry.url">{{ entry.title }}</a>
+      /
+      {{ getMonthDay(entry.published) }}
     </div>
+    <hr />
+    <div>Read More on Medium</div>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -17,9 +21,9 @@ import { get, map } from 'lodash'
 import { format } from 'date-fns'
 
 type Post = {
-    title: string
-    published: Date
-    url: string
+  title: string
+  published: Date
+  url: string
 }
 
 // FIXME: These are all temporary
@@ -27,40 +31,41 @@ const entries = ref([]) as Ref<Post[]>
 const loading = ref(false)
 
 const fetchFeed = async () => {
-    loading.value = true
-    const response = await fetch('/api/v1/medium/')
-    const jsonResponse = await response.json()
-    return jsonResponse as JSON
+  loading.value = true
+  const apiUrl = ''
+  const response = await fetch(`${apiUrl}/api/v1/medium/`)
+  const jsonResponse = await response.json()
+  return jsonResponse as JSON
 }
 
 /**
  * TODO: This is temp and should moved to a Utils section.
- * @param date 
+ * @param date
  */
 const getYear = (date: Date) => {
-    return format(date, 'yyyy')
+  return format(date, 'yyyy')
 }
 
 /**
  * TODO: This is temp and should moved to a Utils section.
- * @param date 
+ * @param date
  */
 const getMonthDay = (date: Date) => {
-    return format(date, 'MMM dd')
+  return format(date, 'MMM dd')
 }
 
 const processFeed = (jsonResponse: JSON): Post[] => {
-    return map(get(jsonResponse, 'entries', []), (entry: JSON) => {
-        return {
-            title: get(entry, 'title', ''),
-            published: new Date(get(entry, 'published', '')),
-            url: get(entry, 'id', '')
-        }
-    })
+  return map(get(jsonResponse, 'entries', []), (entry: JSON) => {
+    return {
+      title: get(entry, 'title', ''),
+      published: new Date(get(entry, 'published', '')),
+      url: get(entry, 'id', '')
+    }
+  })
 }
 
 fetchFeed().then((body) => {
-    entries.value = processFeed(body)
-    loading.value = false
+  entries.value = processFeed(body)
+  loading.value = false
 })
 </script>
