@@ -1,16 +1,25 @@
 <template>
+    <div>Posts</div>
+    <hr />
     <div v-if="loading">Loading ...</div>
-    <div v-else v-for="entry in entries" :key="entry.title">
-        {{ entry.title }}
+    <div v-else>
+        <div v-for="entry in entries" :key="entry.url">
+            {{ getYear(entry.published) }} / <a :href="entry.url">{{ entry.title }}</a> / {{ getMonthDay(entry.published) }}
+        </div>
+        <hr />
+        <div>Read More on Medium</div>
     </div>
 </template>
 
 <script lang="ts" setup>
 import { ref, type Ref } from 'vue'
 import { get, map } from 'lodash'
+import { format } from 'date-fns'
 
 type Post = {
     title: string
+    published: Date
+    url: string
 }
 
 // FIXME: These are all temporary
@@ -24,10 +33,28 @@ const fetchFeed = async () => {
     return jsonResponse as JSON
 }
 
+/**
+ * TODO: This is temp and should moved to a Utils section.
+ * @param date 
+ */
+const getYear = (date: Date) => {
+    return format(date, 'yyyy')
+}
+
+/**
+ * TODO: This is temp and should moved to a Utils section.
+ * @param date 
+ */
+const getMonthDay = (date: Date) => {
+    return format(date, 'MMM dd')
+}
+
 const processFeed = (jsonResponse: JSON): Post[] => {
     return map(get(jsonResponse, 'entries', []), (entry: JSON) => {
         return {
-            title: get(entry, 'title', '')
+            title: get(entry, 'title', ''),
+            published: new Date(get(entry, 'published', '')),
+            url: get(entry, 'id', '')
         }
     })
 }
