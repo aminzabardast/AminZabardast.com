@@ -15,6 +15,11 @@ import Footer from './components/GlobalFooter.vue'
 </template>
 
 <style lang="css">
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Light mode */
 @media (prefers-color-scheme: light) {
   body {
@@ -44,7 +49,6 @@ import Footer from './components/GlobalFooter.vue'
 }
 
 .footer {
-  padding: 20px;
   text-align: center;
 }
 </style>
