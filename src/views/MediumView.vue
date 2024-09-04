@@ -69,10 +69,11 @@ const processFeed = (jsonResponse: JSON): Post[] => {
 fetchFeed()
   .then((body) => {
     entries.value = processFeed(body)
-    loading.value = false
   })
-  .catch((e) => {
+  .catch(() => {
     error.value = true
+  })
+  .finally(() => {
     loading.value = false
   })
 </script>
