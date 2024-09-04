@@ -58,8 +58,6 @@ const socialMediaItems: SocialMediaItem[] = [
 
 <style lang="css">
 .flex-container {
-  /** FIXME: There is an issue centering the main page's content. Needs more investigation. */
-  padding: 100px;
   margin: 0;
   display: flex;
   align-items: center;

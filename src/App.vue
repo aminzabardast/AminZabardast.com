@@ -46,6 +46,7 @@ body {
 
 .content {
   flex-grow: 1;
+  padding-top: 100px;
 }
 
 .footer {
