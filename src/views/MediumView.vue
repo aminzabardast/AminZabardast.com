@@ -2,6 +2,7 @@
   <div>Posts</div>
   <hr />
   <div v-if="loading">Loading ...</div>
+  <div v-else-if="error">Some error happened. Reload the page.</div>
   <div v-else>
     <div v-for="entry in entries" :key="entry.url">
       {{ getYear(entry.published) }}
@@ -29,6 +30,7 @@ type Post = {
 // FIXME: These are all temporary
 const entries = ref([]) as Ref<Post[]>
 const loading = ref(false)
+const error = ref(false)
 
 const fetchFeed = async () => {
   loading.value = true
@@ -64,8 +66,13 @@ const processFeed = (jsonResponse: JSON): Post[] => {
   })
 }
 
-fetchFeed().then((body) => {
-  entries.value = processFeed(body)
-  loading.value = false
-})
+fetchFeed()
+  .then((body) => {
+    entries.value = processFeed(body)
+    loading.value = false
+  })
+  .catch((e) => {
+    error.value = true
+    loading.value = false
+  })
 </script>
