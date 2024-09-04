@@ -3,7 +3,6 @@ import WebsiteTile from '@/components/WebsiteTitle.vue'
 import HomeIntro from '@/components/HomeIntro.vue'
 import SocialNetworks, { type SocialMediaItem } from '@/components/SocialNetworks.vue'
 import HomeMenu from '@/components/HomeMenu.vue'
-import Footer from '@/components/GlobalFooter.vue'
 import { rotatePastelColors } from '@/colors'
 
 const pastelColorGenerator = rotatePastelColors()
@@ -55,23 +54,10 @@ const socialMediaItems: SocialMediaItem[] = [
       </div>
     </div>
   </div>
-  <div class="footer">
-    <Footer />
-  </div>
 </template>
 
 <style lang="css">
-html,
-body,
-div#app,
-main {
-  height: 100%;
-}
-body {
-  margin: 0;
-}
 .flex-container {
-  height: 100%;
   padding: 0;
   margin: 0;
   display: flex;
@@ -89,15 +75,5 @@ body {
   flex-direction: column;
   align-items: normal;
   margin-top: 40px;
-}
-</style>
-
-<style lang="css" scoped>
-.footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 0;
 }
 </style>

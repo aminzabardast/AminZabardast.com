@@ -1,11 +1,17 @@
 <script setup lang="ts">
 import { RouterView } from 'vue-router'
+import Footer from './components/GlobalFooter.vue'
 </script>
 
 <template>
-  <main class="open-sans">
-    <RouterView />
-  </main>
+  <div class="container open-sans">
+    <main class="content">
+      <RouterView />
+    </main>
+    <footer class="footer">
+      <Footer />
+    </footer>
+  </div>
 </template>
 
 <style lang="css">
@@ -23,5 +29,22 @@ import { RouterView } from 'vue-router'
     background-color: black;
     color: white;
   }
+}
+</style>
+
+<style lang="css" scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex-grow: 1;
+}
+
+.footer {
+  padding: 20px;
+  text-align: center;
 }
 </style>
