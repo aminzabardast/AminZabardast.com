@@ -55,7 +55,7 @@ const error = ref(false)
 
 const fetchFeed = async () => {
   loading.value = true
-  const apiUrl = 'https://aminzabardast.com'
+  const apiUrl = ''
   const response = await fetch(`${apiUrl}/api/v1/medium/`)
   const jsonResponse = await response.json()
   return jsonResponse as JSON
