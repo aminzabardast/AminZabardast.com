@@ -7,7 +7,6 @@ import { PASTEL1, PASTEL5 } from '@/colors'
 </script>
 
 <style lang="css">
-/* HTML: <div class="loader"></div> */
 .loader {
   width: 50px;
   aspect-ratio: 1;
