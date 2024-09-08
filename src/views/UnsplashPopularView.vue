@@ -29,7 +29,6 @@ onMounted(() => {
   fetchFeed()
     .then((data) => {
       const processedData = map(data, (item): Image => {
-        console.log(item)
         return {
           imageUrl: get(item, 'urls.small'),
           url: get(item, 'links.html'),
