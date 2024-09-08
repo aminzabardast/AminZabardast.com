@@ -16,7 +16,7 @@ import LoadingSpinner from '@/components/LoadingSpinner.vue'
 
 const fetchFeed = async () => {
   const apiUrl = ''
-  const response = await fetch(`${apiUrl}/api/v1/unsplash/random/`)
+  const response = await fetch(`${apiUrl}/api/v1/unsplash/random`)
   const jsonResponse = await response.json()
   return jsonResponse as JSON
 }
