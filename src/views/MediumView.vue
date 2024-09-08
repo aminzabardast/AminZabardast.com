@@ -1,25 +1,42 @@
 <template>
-  <div>Posts</div>
-  <hr />
-  <div v-if="loading">Loading ...</div>
-  <div v-else-if="error">Some error happened. Reload the page.</div>
-  <div v-else>
-    <div v-for="entry in entries" :key="entry.url">
-      {{ getYear(entry.published) }}
-      /
-      <a :href="entry.url">{{ entry.title }}</a>
-      /
-      {{ getMonthDay(entry.published) }}
+  <div class="medium-container">
+    <MediumHeadings />
+    <div class="loading-container" v-if="loading">
+      <LoadingSpinner />
     </div>
-    <hr />
-    <div>Read More on Medium</div>
+    <div v-else-if="error">
+      <Box type="error"> Some error happened. Reload the page. </Box>
+    </div>
+    <div v-else>
+      <div v-for="year in distinctYearsDesc" :key="year">
+        <Year>
+          {{ year }}
+        </Year>
+        <Entry
+          v-for="entry in get(entriesGroupedByYear, year)"
+          :key="entry.url"
+          :url="entry.url"
+          :published="entry.published"
+          :title="entry.title"
+          :color-generator="colorGenerator"
+        />
+      </div>
+      <MediumFooter :color-generator="colorGenerator" />
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { ref, type Ref } from 'vue'
-import { get, map } from 'lodash'
+import { ref, type Ref, computed } from 'vue'
+import { get, map, groupBy, keys, reverse } from 'lodash'
 import { format } from 'date-fns'
+import MediumHeadings from '@/components/MediumHeadings.vue'
+import LoadingSpinner from '@/components/LoadingSpinner.vue'
+import MediumFooter from '@/components/MediumFooter.vue'
+import Box from '@/components/InfoBox.vue'
+import Year from '@/components/MediumYear.vue'
+import Entry from '@/components/MediumEntry.vue'
+import { rotatePastelColors } from '@/colors'
 
 type Post = {
   title: string
@@ -29,31 +46,19 @@ type Post = {
 
 // FIXME: These are all temporary
 const entries = ref([]) as Ref<Post[]>
+const entriesGroupedByYear = computed(() => {
+  return groupBy(entries.value, (item: Post): string => format(item.published, 'yyyy'))
+})
+const distinctYearsDesc = computed(() => reverse(keys(entriesGroupedByYear.value)))
 const loading = ref(false)
 const error = ref(false)
 
 const fetchFeed = async () => {
   loading.value = true
-  const apiUrl = ''
+  const apiUrl = 'https://aminzabardast.com'
   const response = await fetch(`${apiUrl}/api/v1/medium/`)
   const jsonResponse = await response.json()
   return jsonResponse as JSON
-}
-
-/**
- * TODO: This is temp and should moved to a Utils section.
- * @param date
- */
-const getYear = (date: Date) => {
-  return format(date, 'yyyy')
-}
-
-/**
- * TODO: This is temp and should moved to a Utils section.
- * @param date
- */
-const getMonthDay = (date: Date) => {
-  return format(date, 'MMM dd')
 }
 
 const processFeed = (jsonResponse: JSON): Post[] => {
@@ -76,4 +81,16 @@ fetchFeed()
   .finally(() => {
     loading.value = false
   })
+
+const colorGenerator = rotatePastelColors()
 </script>
+
+<style lang="css" scoped>
+div.medium-container {
+  max-width: 800px;
+  margin: auto;
+}
+.loading-container div {
+  margin: auto;
+}
+</style>
