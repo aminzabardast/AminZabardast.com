@@ -23,8 +23,6 @@ const props = withDefaults(defineProps<Props>(), {})
 
 const imagesEl = ref()
 
-console.log(imagesEl)
-
 onUpdated(() => {
   const grid = new MasonryGrid(imagesEl.value, {
     gap: 10,
