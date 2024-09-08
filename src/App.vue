@@ -4,15 +4,22 @@ import Footer from './components/GlobalFooter.vue'
 </script>
 
 <template>
-  <main class="open-sans">
-    <RouterView />
-    <div class="footer">
+  <div class="container open-sans">
+    <main class="content">
+      <RouterView />
+    </main>
+    <footer class="footer">
       <Footer />
-    </div>
-  </main>
+    </footer>
+  </div>
 </template>
 
 <style lang="css">
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Light mode */
 @media (prefers-color-scheme: light) {
   body {
@@ -31,11 +38,18 @@ import Footer from './components/GlobalFooter.vue'
 </style>
 
 <style lang="css" scoped>
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content {
+  flex-grow: 1;
+  padding-top: 100px;
+}
+
 .footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 0;
-  margin: 0;
+  text-align: center;
 }
 </style>
