@@ -7,6 +7,12 @@ services:
       - 8148:8080
     environment:
       - PRODUCTION=true # Change to `false` for Development
+      - UNSPLASH_API_KEY= # This must be filled in
     # volumes: # Enable for Development
     #   - ./server/app:/code/app
     restart: 'always'
+    depends_on:
+      - cache
+  cache:
+    container_name: 'AminZabardast.com-Redis-Cache'
+    image: 'redis:7.4-alpine'
