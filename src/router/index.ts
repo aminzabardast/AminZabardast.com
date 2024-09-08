@@ -3,6 +3,8 @@ import HomeView from '@/views/HomeView.vue'
 import PageUnderConstruction from '@/views/PageUnderConstruction.vue'
 import PageNotFoundView from '@/views/PageNotFoundView.vue'
 import MediumView from '@/views/MediumView.vue'
+import UnsplashPopularView from '@/views/UnsplashPopularView.vue'
+import UnsplashRandomView from '@/views/UnsplashRandomView.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -29,17 +31,17 @@ const router = createRouter({
     },
     {
       path: '/photos',
-      redirect: '/photos/featured',
+      redirect: '/photos/random',
       children: [
         {
-          path: 'featured',
-          name: 'Featured Photos',
-          component: PageUnderConstruction
+          path: 'popular',
+          name: 'Popular Photos',
+          component: UnsplashPopularView
         },
         {
-          path: 'favorites',
-          name: 'Favorite Photos',
-          component: PageUnderConstruction
+          path: 'random',
+          name: 'Random Photos',
+          component: UnsplashRandomView
         }
       ]
     }
