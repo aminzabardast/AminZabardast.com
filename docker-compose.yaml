@@ -16,3 +16,4 @@ services:
   cache:
     container_name: 'AminZabardast.com-Redis-Cache'
     image: 'redis:7.4-alpine'
+    restart: 'always'
