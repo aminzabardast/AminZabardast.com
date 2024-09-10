@@ -26,7 +26,6 @@ const imagesEl = ref()
 onUpdated(() => {
   const grid = new MasonryGrid(imagesEl.value, {
     gap: 10,
-    align: 'left',
     useResizeObserver: true,
     observeChildren: true
   })
