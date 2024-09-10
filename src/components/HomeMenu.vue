@@ -22,11 +22,6 @@ const pastelColorGenerator = rotatePastelColors()
       <RouterLink to="/photos/random">Browse Photos from My Unsplash Collection</RouterLink>
     </Link>
   </div>
-  <div class="menu-item">
-    <Link :color="pastelColorGenerator.next().value">
-      <RouterLink to="/photos/popular">Peek at Popular Photos on My Unsplash</RouterLink>
-    </Link>
-  </div>
 </template>
 
 <style lang="css" scoped>
