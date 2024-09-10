@@ -6,6 +6,7 @@
       :imageUrl="image.imageUrl"
       :color="image.color"
       :url="image.url"
+      :ratio="image.ratio"
     />
   </div>
 </template>
@@ -16,7 +17,7 @@ import { MasonryGrid } from '@egjs/grid'
 import ImageGalleryItem from '@/components/ImageGalleryItem.vue'
 
 export interface Props {
-  images: ImageGalleryItem[]
+  images: (typeof ImageGalleryItem)[]
 }
 
 const props = withDefaults(defineProps<Props>(), {})
@@ -26,7 +27,6 @@ const imagesEl = ref()
 onUpdated(() => {
   const grid = new MasonryGrid(imagesEl.value, {
     gap: 10,
-    align: 'left',
     useResizeObserver: true,
     observeChildren: true
   })

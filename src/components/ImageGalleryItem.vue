@@ -5,21 +5,34 @@
         <div>Views:</div>
         <div>Dowload:</div>
       </div>
-      <img :src="props.imageUrl" loading="lazy" />
+      <div class="image">
+        <img :src="props.imageUrl" loading="lazy" :style="getStyle(props.ratio, props.color)" />
+      </div>
     </a>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { type CSSProperties } from 'vue'
+
 export interface Props {
   imageUrl: string
   url?: string
   color?: string
+  ratio: number
 }
 
 const props = withDefaults(defineProps<Props>(), {
   color: 'grey'
 })
+
+const getStyle = (ratio: number, color: string): CSSProperties => {
+  return {
+    width: '400px',
+    height: `${400 * ratio}px`,
+    backgroundColor: color
+  }
+}
 </script>
 
 <style lang="css" scoped>
@@ -59,5 +72,10 @@ a:hover img {
   -webkit-transform: translateX(-3px);
   transform: translateX(-3px);
   transition: 0.5s ease;
+}
+
+.image {
+  padding: 0;
+  margin: 0;
 }
 </style>

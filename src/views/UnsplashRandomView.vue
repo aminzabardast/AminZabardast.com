@@ -35,10 +35,13 @@ onMounted(() => {
   fetchFeed()
     .then((data) => {
       const processedData = map(data, (item): Image => {
+        const width = parseFloat(get(item, 'width', '1'))
+        const height = parseFloat(get(item, 'height', '1'))
         return {
           imageUrl: get(item, 'urls.small'),
           url: get(item, 'links.html'),
-          color: get(item, 'color')
+          color: get(item, 'color'),
+          ratio: height / width
         }
       })
       listOfImages.value = processedData
