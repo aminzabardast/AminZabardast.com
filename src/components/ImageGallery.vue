@@ -16,7 +16,7 @@ import { MasonryGrid } from '@egjs/grid'
 import ImageGalleryItem from '@/components/ImageGalleryItem.vue'
 
 export interface Props {
-  images: ImageGalleryItem[]
+  images: (typeof ImageGalleryItem)[]
 }
 
 const props = withDefaults(defineProps<Props>(), {})
