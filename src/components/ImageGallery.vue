@@ -6,6 +6,7 @@
       :imageUrl="image.imageUrl"
       :color="image.color"
       :url="image.url"
+      :ratio="image.ratio"
     />
   </div>
 </template>
