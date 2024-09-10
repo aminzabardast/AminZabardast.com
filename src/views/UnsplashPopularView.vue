@@ -1,11 +1,12 @@
 <template>
-  <!-- TODO: Title of page is missing -->
-  <!-- TODO: Link to home is missing -->
+  <div class="unsplash-content-container">
+    <UnsplashHeadings mode="popular" />
+    <UnsplashMenu :color-generator="colorGenerator" mode="popular" />
+  </div>
   <div class="loading-div" v-if="loading">
     <LoadingSpinner />
   </div>
   <ImageGallery :images="listOfImages" />
-  <!-- TODO: More on Unsplash is missing -->
 </template>
 
 <script lang="ts" setup>
@@ -13,6 +14,11 @@ import ImageGallery, { type Image } from '@/components/ImageGallery.vue'
 import { ref, onMounted, type Ref } from 'vue'
 import { get, map } from 'lodash'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
+import UnsplashHeadings from '@/components/UnsplashHeadings.vue'
+import { rotatePastelColors } from '@/colors'
+import UnsplashMenu from '@/components/UnsplashMenu.vue'
+
+const colorGenerator = rotatePastelColors()
 
 const fetchFeed = async () => {
   const apiUrl = ''
@@ -46,5 +52,14 @@ onMounted(() => {
 <style lang="css" scoped>
 .loading-div > div {
   margin: auto;
+}
+.unsplash-content-container {
+  max-width: 800px;
+  margin: auto;
+  padding-bottom: 50px;
+}
+a {
+  color: inherit;
+  text-decoration: inherit;
 }
 </style>

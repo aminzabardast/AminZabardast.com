@@ -34,14 +34,14 @@ const router = createRouter({
       redirect: '/photos/random',
       children: [
         {
-          path: 'popular',
-          name: 'Popular Photos',
-          component: UnsplashPopularView
-        },
-        {
           path: 'random',
           name: 'Random Photos',
           component: UnsplashRandomView
+        },
+        {
+          path: 'popular',
+          name: 'Popular Photos',
+          component: UnsplashPopularView
         }
       ]
     }
