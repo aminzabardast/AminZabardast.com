@@ -15,10 +15,10 @@ import { ref, onMounted, type Ref } from 'vue'
 import { get, map } from 'lodash'
 import LoadingSpinner from '@/components/LoadingSpinner.vue'
 import UnsplashHeadings from '@/components/UnsplashHeadings.vue'
-import { rotatePastelColors } from '@/colors'
+import { rotateThemeColors } from '@/colors'
 import UnsplashMenu from '@/components/UnsplashMenu.vue'
 
-const colorGenerator = rotatePastelColors()
+const colorGenerator = rotateThemeColors()
 
 const fetchFeed = async () => {
   const apiUrl = ''

@@ -3,7 +3,13 @@
 </template>
 
 <script lang="ts" setup>
-import { PASTEL1, PASTEL5 } from '@/colors'
+import { ref } from 'vue'
+import { rotateThemeColors } from '@/colors'
+
+const themeColorGenerator = rotateThemeColors()
+
+const color1 = ref(themeColorGenerator.next().value)
+const color2 = ref(themeColorGenerator.next().value)
 </script>
 
 <style lang="css">
@@ -19,12 +25,12 @@ import { PASTEL1, PASTEL5 } from '@/colors'
   grid-area: 1/1;
   border: 8px solid;
   border-radius: 50%;
-  border-color: v-bind('PASTEL1') v-bind('PASTEL1') #0000 #0000;
+  border-color: v-bind('color1') v-bind('color1') #0000 #0000;
   mix-blend-mode: darken;
   animation: l14 1s infinite linear;
 }
 .loader::after {
-  border-color: #0000 #0000 v-bind('PASTEL5') v-bind('PASTEL5');
+  border-color: #0000 #0000 v-bind('color2') v-bind('color2');
   animation-direction: reverse;
 }
 @keyframes l14 {
