@@ -1,9 +1,11 @@
 <script setup lang="ts">
 import Link from '@/components/AnimatedLink.vue'
-import { PASTEL3 } from '@/colors'
+import { rotateThemeColors } from '@/colors'
 import { computed, ref } from 'vue'
 
 const isDark = ref(window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)
+
+const themeColorGenerator = rotateThemeColors()
 
 // TODO: Find better solution
 window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (event) => {
@@ -22,7 +24,7 @@ const buttonColor = computed(() => {
       <span class="icon">😵</span>
     </p>
     <div>
-      <Link :color="PASTEL3" :background-color="buttonColor">
+      <Link :color="themeColorGenerator.next().value" :background-color="buttonColor">
         <RouterLink to="/" class="abc">Go To Homepage</RouterLink>
       </Link>
     </div>

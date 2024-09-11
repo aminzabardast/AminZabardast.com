@@ -4,7 +4,7 @@ const PASTEL3 = '#9cadce'
 const PASTEL4 = '#7ec4cf'
 const PASTEL5 = '#52b2cf'
 
-function* rotatePastelColors() {
+function* rotateThemeColors() {
   while (true) {
     yield PASTEL1
     yield PASTEL2
@@ -14,4 +14,4 @@ function* rotatePastelColors() {
   }
 }
 
-export { PASTEL1, PASTEL2, PASTEL3, PASTEL4, PASTEL5, rotatePastelColors }
+export { PASTEL1, PASTEL2, PASTEL3, PASTEL4, PASTEL5, rotateThemeColors }

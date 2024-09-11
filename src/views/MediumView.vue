@@ -36,7 +36,7 @@ import MediumFooter from '@/components/MediumFooter.vue'
 import Box from '@/components/InfoBox.vue'
 import Year from '@/components/MediumYear.vue'
 import Entry from '@/components/MediumEntry.vue'
-import { rotatePastelColors } from '@/colors'
+import { rotateThemeColors } from '@/colors'
 
 type Post = {
   title: string
@@ -82,7 +82,7 @@ fetchFeed()
     loading.value = false
   })
 
-const colorGenerator = rotatePastelColors()
+const colorGenerator = rotateThemeColors()
 </script>
 
 <style lang="css" scoped>
