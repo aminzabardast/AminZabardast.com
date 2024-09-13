@@ -1,9 +1,17 @@
 from fastapi import APIRouter
 import requests
 import feedparser
+from redis import Redis
+import json
+import logging
+import os
 
 MEDIUM_USER = 'aminzabardast'
 MEDIUM_FEED_URL = f'https://{MEDIUM_USER}.medium.com/feed'
+VALIDITY = 1800
+IS_DEVELOPMENT = os.environ['PRODUCTION'] == 'false'
+
+logging.basicConfig(format='%(levelname)s:=======>   %(message)s', level=logging.DEBUG if IS_DEVELOPMENT else logging.INFO)
 
 router = APIRouter(
     prefix='/medium'
