@@ -4,7 +4,7 @@ WORKDIR /code
 RUN npm install -g pnpm
 COPY ./ /code
 RUN pnpm i
-RUN pnpm build-only
+RUN pnpm build
 
 FROM python:3.12-slim AS server
 
