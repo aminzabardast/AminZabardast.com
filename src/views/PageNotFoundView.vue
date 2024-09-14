@@ -24,7 +24,7 @@ const buttonColor = computed(() => {
       <span class="icon">😵</span>
     </p>
     <div>
-      <Link :color="themeColorGenerator.next().value" :background-color="buttonColor">
+      <Link :color="themeColorGenerator.next().value as string" :background-color="buttonColor">
         <RouterLink to="/" class="abc">Go To Homepage</RouterLink>
       </Link>
     </div>

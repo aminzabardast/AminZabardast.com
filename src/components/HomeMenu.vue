@@ -8,17 +8,17 @@ const themeColorGenerator = rotateThemeColors()
 
 <template>
   <div class="menu-item">
-    <Link :color="themeColorGenerator.next().value">
+    <Link :color="themeColorGenerator.next().value as string">
       <RouterLink to="/about">Get to Know Me a Bit Better</RouterLink>
     </Link>
   </div>
   <div class="menu-item">
-    <Link :color="themeColorGenerator.next().value">
+    <Link :color="themeColorGenerator.next().value as string">
       <RouterLink to="/medium">Check Out My Latest Medium Musings</RouterLink>
     </Link>
   </div>
   <div class="menu-item">
-    <Link :color="themeColorGenerator.next().value">
+    <Link :color="themeColorGenerator.next().value as string">
       <RouterLink to="/photos/random">Browse Photos from My Unsplash Collection</RouterLink>
     </Link>
   </div>
