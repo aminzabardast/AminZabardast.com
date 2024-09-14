@@ -37,6 +37,7 @@ onMounted(() => {
       const processedData = map(data, (item): Image => {
         const width = parseFloat(get(item, 'width', '1'))
         const height = parseFloat(get(item, 'height', '1'))
+        // @ts-ignore FIXME: TS Issue
         return {
           imageUrl: get(item, 'urls.small'),
           url: get(item, 'links.html'),
