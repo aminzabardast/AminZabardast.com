@@ -17,12 +17,12 @@ import LoadingSpinner from '@/components/LoadingSpinner.vue'
 import UnsplashHeadings from '@/components/UnsplashHeadings.vue'
 import { rotateThemeColors } from '@/colors'
 import UnsplashMenu from '@/components/UnsplashMenu.vue'
+import { API_URL } from '@/config'
 
 const colorGenerator = rotateThemeColors()
 
 const fetchFeed = async () => {
-  const apiUrl = ''
-  const response = await fetch(`${apiUrl}/api/v1/unsplash/popular`)
+  const response = await fetch(`${API_URL}/api/v1/unsplash/popular`)
   const jsonResponse = await response.json()
   return jsonResponse as JSON
 }

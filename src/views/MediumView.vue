@@ -37,6 +37,7 @@ import Box from '@/components/InfoBox.vue'
 import Year from '@/components/MediumYear.vue'
 import Entry from '@/components/MediumEntry.vue'
 import { rotateThemeColors } from '@/colors'
+import { API_URL } from '@/config'
 
 type Post = {
   title: string
@@ -55,8 +56,7 @@ const error = ref(false)
 
 const fetchFeed = async () => {
   loading.value = true
-  const apiUrl = ''
-  const response = await fetch(`${apiUrl}/api/v1/medium/`)
+  const response = await fetch(`${API_URL}/api/v1/medium/`)
   const jsonResponse = await response.json()
   return jsonResponse as JSON
 }
