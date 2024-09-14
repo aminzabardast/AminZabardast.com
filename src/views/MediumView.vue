@@ -45,7 +45,6 @@ type Post = {
   url: string
 }
 
-// FIXME: These are all temporary
 const entries = ref([]) as Ref<Post[]>
 const entriesGroupedByYear = computed(() => {
   return groupBy(entries.value, (item: Post): string => format(item.published, 'yyyy'))
